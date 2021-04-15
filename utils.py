@@ -36,9 +36,10 @@ def save_data(filename, max_values_ta, ds):
     # Write latitudes, longitudes, from input Dataset
     lat[:] = ds['lat'][:]
     lon[:] = ds['lon'][:]
-    # Write the data.  This writes the whole 3D netCDF variable all at once.
+    # Write the data.  This writes the whole 2D netCDF variable all at once.
     max_ta[:,:] = max_values_ta  # Appends data along lat and lon dimension
     print("-- Wrote data, max_ta.shape is now ", max_ta.shape)
-    # read data back from variable (by slicing it), print min and max
-    print("-- Min/Max values:", max_ta[:,:].min(), max_ta[:,:].max())
+    # read data back from variable (by slicing it), print min and max, excluding nan values
+    ta_max_masked = np.ma.masked_where(np.isnan(max_ta), max_ta)
+    print("-- Min/Max values:", ta_max_masked[:,:].min(), ta_max_masked[:,:].max())
 
