@@ -1,15 +1,13 @@
 # JRCTest
  JRC Test script computes max average temperature over timesteps
  
-1. Get the data from the repository [https://github.com/ec-jrc/lisflood-lisvap/tree/master/tests/data/input/glofas](https://github.com/ec-jrc/lisflood-lisvap/tree/master/tests/data/input/glofas).
+1. Uses dataset `ta.nc` from the repository [https://github.com/ec-jrc/lisflood-lisvap/tree/master/tests/data/input/glofas](https://github.com/ec-jrc/lisflood-lisvap/tree/master/tests/data/input/glofas).
 
-2. Extracts the ta.nc (average temperature over several days/timesteps)
+2. Computes the maximum of the average temperature (ta) for each cell for the input period. 
 
-3. Computes the maximum of the average temperature (ta) for each cell for the input period. 
+3. Writes the output as a map using [https://unidata.github.io/python-training/workshop/Bonus/netcdf-writing/](https://unidata.github.io/python-training/workshop/Bonus/netcdf-writing/)
 
-4. Writes the output as a map using [https://unidata.github.io/python-training/workshop/Bonus/netcdf-writing/](https://unidata.github.io/python-training/workshop/Bonus/netcdf-writing/)
-
-5. Makes unit tests to verify the solution
+4. Makes unit tests to verify the solution
 
 Requirements:
 
